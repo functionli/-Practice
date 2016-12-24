@@ -1,0 +1,263 @@
+ @charset "utf-8";
+
+.header{
+    width: 100%;
+    height:638px;
+}
+.nav{
+    width: 100%;
+    height: 83px;
+    position: fixed;
+    left:0;
+    top:0;
+    background: rgba(0,0,0,0.4);
+    z-index: 1000;
+}
+.navCon h1{
+    float:left;
+    line-height: 100px;
+}
+.navCon h1 a{
+    display: block;
+    width: 325px;
+    margin-top: 25px;
+    height: 33px;
+    background: url(../images/logo1.png)no-repeat;
+}
+.navCon ul{
+    /*float:right;*/
+    margin-left:230px;
+}
+.navCon ul li{
+    float: left;
+    line-height: 83px;
+    font-size: 16px;
+    margin: 0 25px;
+}
+.nav ul li a:hover{
+    color: yellow;
+}
+
+.navCon ul li a{
+    color: #f0f0f0;
+}
+.banner{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.slide{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.slide1{
+    background: url(../images/banner1.jpg)no-repeat center top;
+}
+.slide2{
+    background: url(../images/banner2.jpg)no-repeat center top;
+}
+.navCon{
+    height: 100%;
+    width: 100%;
+}
+
+.channel ul{
+    width: 100%;
+    text-align: center;
+}
+.channel ul li{
+    display: inline-block;
+  margin: 0 20px;
+}
+.channel ul li a{
+    display: block;
+    color: #666;
+}
+.channel ul li a span{
+    display: block;
+    padding-top:20px;
+    font-size: 16px;
+}
+.travel{
+    width: 100%;
+    height: 751px;
+    background: url(../images/slide-view.jpg)no-repeat center top;
+    position: relative;
+}
+.travel ul{
+    width: 100%;
+    position: absolute;
+    bottom: 85px;
+    text-align: center;
+}
+.travel ul li{
+    /*这是个技巧*/
+    display: inline-block;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: #fff;
+    margin: 0 17px;
+}
+.travel ul li a{
+    display: block;
+    color: #000;
+    /*border-radius: 100%;*/
+    line-height: 90px;
+    font-size: 16px;
+    box-shadow: 0 0 0 0 rgba(155, 236, 255, 0.5);
+}
+.travel ul li a:hover{
+    color:#fff;
+    /*这是个重点*/
+    box-shadow: 0 0 0 30px transparent;
+    -webkit-transition: 1s;
+    transition: 1s;
+    border-radius: 100%;
+}
+.server{
+    background: #f0f0f0;
+    padding: 60px 0;
+}
+.server ul{
+    width: 100%;
+    text-align: center;
+}
+.server ul li{
+    display: inline-block;
+    width: 263px;
+    background: #ffffff;
+    /*border: 1px solid #9becff;*/
+}
+.server ul li h4{
+    font-size: 20px;
+    padding: 15px 25px;
+}
+.server ul li p{
+    line-height: 25px;
+    font-size: 12px;
+    padding: 0 25px 20px 25px;
+    text-align: left;
+}
+@media all and (max-width: 1000px) {
+    /*也就是小于1000的时候呈现的状态最大是1000的时候*/
+    .navCon{
+        width: 1000px;
+        margin:0 auto;
+    }
+}
+/*这是响应式的主断点*/
+
+@media all and (max-width: 999px) {
+
+      .header{
+          width: 465px;
+      }
+    .header h1 a{
+        width: 272px;
+        background: url(../images/logo2.png)no-repeat;
+        background-size: 272px 33px;
+    }
+    .slide1{
+        background-size: 1399px 465px;
+    }
+
+    .slide{
+        background-size: 1399px 465px;
+    }
+    .channel li{
+        max-width:16%;
+        /*如果li的宽度大于16% 则显示成16%的宽度，如果小于16% 则显示成自身内容的宽度*/
+    }
+    .channel li a img{
+        /*弹性的来控制图片的大小*/
+        max-width: 100px;
+    }
+    .travel{
+        width: 465px;
+        background-size: 1399px 465px;
+    }
+   .server ul li{
+       width: 30%;
+   }
+   .server ul li img{
+       width: 100%;
+       vertical-align: top;
+       /*垂直方向顶端对齐*/
+   }
+   .server ul li h4{
+       font-size: 14px;
+   }
+}
+@media all and (max-width: 795px) {
+
+     /*这是次断点*/
+     .header ul li{
+         margin: 0 6px;
+     }
+}
+
+@media all and (max-width: 480px) {
+/*这是主断点*/
+    .header{
+        height: 300px;
+    }
+    .slide{
+        background-size: 902px 300px;
+    }
+    .nav{
+        height: 50px;
+        background: red;
+    }
+    .nav h1{
+        margin-top: 8px;
+    }
+    .nav ul{
+        width: 100%;
+        display: none;
+        background:red;
+    }
+    .nav ul li{
+        float:none;
+        /*表示不浮动*/
+        margin: 0;
+        line-height: 40px;
+    }
+    .channel ul li{
+        max-width: 40%;
+        /*为了把之前的max-width值覆盖掉*/
+        max-width: 100%;
+        margin: 0;
+    }
+    .travel ul{
+        bottom: 20px;
+    }
+    .travel ul li{
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        margin: 0 10px;
+    }
+    .travel ul li a{
+        font-size: 12px;
+    }
+    .travel ul li{
+        width:96%;
+        margin:0 4%;
+        background: none;
+    }
+    .server ul li img{
+        width: 20px;
+        height: 20px;
+        float: left;
+        margin: 10px 5px 0 0;
+    }
+    .server ul li h4{
+        text-align: left;
+        padding: 15px 25px 5px 25px;
+    }
+    .server ul li p{
+        padding: 0 25px;
+    }
+}
